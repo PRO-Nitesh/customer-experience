@@ -1,57 +1,64 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" [mode]="'side'" [opened]="isOpen">
-    <mat-toolbar>
-      <span class="sidebar-title">Menu</span>
-    </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home" routerLinkActive="active">
-        <mat-icon>home</mat-icon>
-        <span class="nav-text">Home</span>
-      </a>
-      <a mat-list-item routerLink="/file-upload" routerLinkActive="active">
-        <mat-icon>upload_file</mat-icon>
-        <span class="nav-text">File Upload</span>
-      </a>
-      <a mat-list-item routerLink="/all-data" routerLinkActive="active">
-        <mat-icon>database</mat-icon>
-        <span class="nav-text">All Data</span>
-      </a>
-      <a mat-list-item routerLink="/analysis" routerLinkActive="active">
-        <mat-icon>analytics</mat-icon>
-        <span class="nav-text">Analysis</span>
-      </a>
-      <a mat-list-item routerLink="/statistics" routerLinkActive="active">
-        <mat-icon>bar_chart</mat-icon>
-        <span class="nav-text">Statistics</span>
-      </a>
-      <a mat-list-item routerLink="/charts" routerLinkActive="active">
-        <mat-icon>pie_chart</mat-icon>
-        <span class="nav-text">Charts</span>
-      </a>
-      <a mat-list-item routerLink="/user-data" routerLinkActive="active">
-        <mat-icon>people</mat-icon>
-        <span class="nav-text">User Data</span>
-      </a>
-      <a mat-list-item routerLink="/customer" routerLinkActive="active">
-        <mat-icon>support_agent</mat-icon>
-        <span class="nav-text">Customer</span>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="toggleSidebar()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span class="toolbar-title">Customer Experience Dashboard</span>
-    </mat-toolbar>
-    <div class="content-container">
-      <router-outlet></router-outlet>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="dashboard-container">
+  <!-- Fixed top toolbar -->
+  <mat-toolbar color="primary" class="top-toolbar">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="toggleSidebar()"
+    >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span class="toolbar-title">Customer Experience Dashboard</span>
+  </mat-toolbar>
+
+  <!-- Main content area with sidebar -->
+  <div class="content-wrapper">
+    <mat-sidenav-container class="sidenav-container">
+      <mat-sidenav #drawer class="sidenav" [mode]="'side'" [opened]="isOpen">
+        <mat-toolbar>
+          <span class="sidebar-title">Menu</span>
+        </mat-toolbar>
+        <mat-nav-list>
+          <a mat-list-item routerLink="/home" routerLinkActive="active">
+            <mat-icon>home</mat-icon>
+            <span class="nav-text">Home</span>
+          </a>
+          <a mat-list-item routerLink="/file-upload" routerLinkActive="active">
+            <mat-icon>upload_file</mat-icon>
+            <span class="nav-text">File Upload</span>
+          </a>
+          <a mat-list-item routerLink="/all-data" routerLinkActive="active">
+            <mat-icon>database</mat-icon>
+            <span class="nav-text">All Data</span>
+          </a>
+          <a mat-list-item routerLink="/analysis" routerLinkActive="active">
+            <mat-icon>analytics</mat-icon>
+            <span class="nav-text">Analysis</span>
+          </a>
+          <a mat-list-item routerLink="/statistics" routerLinkActive="active">
+            <mat-icon>bar_chart</mat-icon>
+            <span class="nav-text">Statistics</span>
+          </a>
+          <a mat-list-item routerLink="/charts" routerLinkActive="active">
+            <mat-icon>pie_chart</mat-icon>
+            <span class="nav-text">Charts</span>
+          </a>
+          <a mat-list-item routerLink="/user-data" routerLinkActive="active">
+            <mat-icon>people</mat-icon>
+            <span class="nav-text">User Data</span>
+          </a>
+          <a mat-list-item routerLink="/customer" routerLinkActive="active">
+            <mat-icon>support_agent</mat-icon>
+            <span class="nav-text">Customer</span>
+          </a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="content-container">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
