@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +7,10 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(Breakpoints.Handset)
-    .pipe(
-      map((result) => result.matches),
-      shareReplay()
-    );
+  @ViewChild('drawer') drawer!: MatSidenav;
+  isOpen = true;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  toggleSidebar() {
+    this.isOpen = !this.isOpen;
+  }
 }
