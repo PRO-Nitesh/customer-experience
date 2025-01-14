@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HomeComponent } from './components/home/home.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { AllDataComponent } from './components/all-data/all-data.component';
 import { AnalysisComponent } from './components/analysis/analysis.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { ChartsComponent } from './components/charts/charts.component';
@@ -22,18 +21,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FileUploadComponent,
-    AllDataComponent,
     AnalysisComponent,
     StatisticsComponent,
     ChartsComponent,
     UserDataComponent,
     CustomerComponent,
+    ReportsComponent,
   ],
   imports: [
     BrowserModule,
